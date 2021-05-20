@@ -1,0 +1,666 @@
+@import "theme.less";
+ul, li{
+  list-style-type: none;
+}
+
+/* 首页 */
+.index{
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+  .index-bgk{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -99999;
+  }
+  .head{
+    width: 100%;
+    height: 34%;
+    overflow: hidden;
+    position: relative;
+    .infocard{
+     width: 100%;
+     height: 100%;
+     position: absolute;
+     top: 0;
+     left: 0;
+     z-index: -999;
+    }
+    ul{
+      width: 95%;
+      height: 100%;
+      margin:auto;
+    }
+    ul li{
+      display: flex;
+      flex-wrap: nowrap;
+      align-items: center;
+      color: @greyColor;
+    }
+    li .head-portrait{
+      width: 55px;
+      height: 55px;
+      border-radius: 50px;
+      margin-right: 10px;
+    }
+    .head-top{
+      width: 85%;
+      height: 62%;
+      margin:auto;
+    }
+    .head-cont{
+      width: 82%;
+    }
+    .head-cont p{
+      width: 100%;
+      white-space: nowrap;
+      overflow: hidden;
+      line-height: 20px;
+      text-overflow: ellipsis;
+    }
+    .head-bottom{
+      width: 95%;
+      height: 29%;
+      margin: auto;
+    }
+    .head-bottom p{
+      width: 33%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      white-space: nowrap;
+      overflow: hidden;
+    }
+    .size{
+      font-size: 16px;
+      font-weight: 600;
+    }
+    .head-bottom .margin-lr{
+      margin: 0px 15px;
+    }
+  }
+  .content{
+    position: absolute;
+    bottom: 0px;
+    left: 2.5%;
+    width: 95%;
+    height:65%;
+    background-color: @whiteColor;
+    box-shadow:0px 5px 15px 5px #dcdee0;
+    border-radius: 15px 15px 0px 0px;
+    .height{
+      height: 100%;
+      position: relative;
+    }
+    ul{
+     width: 90%;
+     margin:20px auto auto auto;
+     display: flex;
+     flex-wrap: wrap;
+    }
+    ul li{
+      width: 25%;
+    }
+    ul li .roulik{
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 20px;
+      color:@greyColor
+    }
+    li .roulik img{
+      width: 50px;
+      height: 50px;
+    }
+    li .roulik p{
+      margin-top: 10px;
+    }
+    .but{
+      width: 70%;
+      height: 80px;
+      position:absolute;
+      bottom: 100px;
+      left:15%;
+      border-radius: 50px;
+      border: none;
+      background-image: linear-gradient(to bottom, @mediumBlueColor, @blueColor);
+      color: @whiteColor;
+    }
+  }
+}
+/* 数据分析 */
+.dataanalysis{
+  height: 100%;
+  overflow: hidden;
+  background-color: @lGrayColor;
+  .top-content{
+    height: 80px;
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    background-color:@whiteColor;
+    box-sizing: border-box;
+    padding: 0px 20px;
+  }
+  .ech{
+    width: 100%; 
+    height: 50%; 
+    background-color: @whiteColor;
+  }
+  .jinri{
+    font-size: 16px;
+    width: 35%;
+    font-weight: 500;
+    i{
+      color: @blueColor;
+      margin-left: 5px;
+      font-weight: 300;
+    }
+  }
+  .end-time{
+    width: 55%;
+    color: @fontGreyColor;
+    white-space: nowrap;
+    overflow: hidden;
+  }
+  .refresh{
+    width: 10%;
+    text-align: center;
+    border: 1px solid @blueColor;
+    border-radius: 10px;
+    color: @blueColor;
+  }
+  ul{
+    width: 100%;
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    margin:15px auto auto auto;
+    text-align: center;
+    background-color: @whiteColor;
+    box-sizing: border-box;
+    padding: 0px 10px;
+    position: relative;
+    li{
+      width: 25%;
+      white-space: nowrap;
+      overflow: hidden;
+      box-sizing: border-box;
+      padding: 10px 5px;
+      
+    }
+    span{
+      color: @fontGreyColor;
+    }
+    p{
+      width: 100%;
+      white-space: nowrap;
+      overflow: hidden;
+      line-height: 25px;
+    }
+    i{
+      color: @blueColor;
+      margin-left: 3px;
+    }
+    .size{
+      font-size: 16px;
+    }
+    .active{
+      position: absolute;
+      bottom: 0;
+      width: 15%;
+      left: 0;
+      height: 3px;
+      background-color: @blueColor;
+    }
+  }
+}
+
+/* 店铺管理 */ 
+.shopadmin{
+  height: 100%;
+  overflow: hidden;
+  .van-cell{
+    width: 95%;
+    border-bottom: 1px solid @lGrayColor;
+    padding: 10px 0px;
+    margin: auto;
+  }
+  .add-img {
+    width: 95%;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    margin: auto;
+    span {
+      // margin-bottom: 10px;
+      padding: 10px 0px;
+    }
+    .shangchuan-but {
+      width: 100px;
+      height: 100px;
+      font-size: 35px;
+      color: #dcdee0;
+      line-height:100px;
+      text-align: center;
+      background-color: #f7f8fa;
+    }
+    .img {
+      width: 100px;
+      height: 100px;
+    }
+  }
+}
+/* 订单管理 */
+.orderadmin{
+  height: 100%;
+  overflow: hidden;
+  background-color: @eeColor;
+  .order-head{
+    height: 45px;
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: space-between;
+    background-color: @whiteColor;
+    box-sizing: border-box;
+    padding: 0px 10px;
+    color: @greyColor;
+    .icon-riqi{
+      color: @blueColor;
+    }
+    .tixian_select{
+      border: none;
+      color: @greyColor;
+      font-size: 16px;
+    }
+    .potion{
+    }
+    .jine-lirun{
+      max-width: 60%;
+      text-align: right;
+      display: flex;
+      align-items: center;
+      flex-wrap: nowrap;
+      box-sizing: border-box;
+      white-space: nowrap;
+      overflow: hidden;
+    }
+    .jine{
+      color: @fontGreyColor;
+    }
+    b{color: @blueColor;}
+  }
+  .tab-list{
+    margin-top: 10px;
+    height: 100%;
+    overflow: hidden;
+  }
+  .tab-list .van-tab--active{
+    color: @blueColor;
+  }
+  .van-tabs__content{
+    height:100%;
+    overflow: auto;
+    margin-top: 10px;
+  }
+  .tab-list ul {
+   margin-bottom: 160px;
+  }
+  .tab-list ul li{
+   width: 95%;
+   margin:auto auto 10px auto;
+   background-color: @whiteColor;
+   border-radius: 10px;
+   box-sizing: border-box;
+   padding: 10px;
+  }
+  .li-top{
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: space-between;
+    span{
+      width: 50%;
+    }
+  }
+  .daifukuan{
+    text-align: right;
+    color: @blueColor;
+  }
+  .li-time{
+    color: @fontGreyColor;
+  }
+  .middle{
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    margin: 10px 0px;
+  }
+  .middle img {
+    width: 80px;
+    height: 80px;
+  }
+  .m-content{
+    width: 54%;
+    p{
+      line-height: 30px;
+      width: 100%;
+    }
+  }
+  .m-content .name{
+    line-height: 20px;
+    word-break: break-all;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+    text-align:left;
+    text-align: justify;
+  }
+  .m-content .price{
+    white-space: nowrap;
+    overflow: hidden;
+    color: @pinkColor;
+    font-weight: 600;
+  }
+  .middle .number{
+    width: 18%;
+    color: @fontGreyColor;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+  }
+  .li-bottom{
+    text-align: right;
+    white-space: nowrap;
+    overflow: hidden;
+  }
+  .shifu{
+    color: @fontGreyColor;
+  }
+  .price-color{
+    color: @pinkColor;
+    font-size: 16px;
+    font-weight: 600;
+  }
+}
+/* 商品管理 */
+.commodityadmin{
+  height: 100%;
+  overflow: hidden;
+  background-color: @eeColor;
+  position: relative;
+  .van-tab--active{
+    color: @blueColor;
+  }
+  .van-tabs{
+    height: 100%;
+    overflow: hidden;
+  }
+  .van-tabs__content{
+    height: 100%;
+    margin-top: 10px;
+    overflow: auto;
+  }
+  ul{
+    margin-bottom: 165px;
+  }
+  ul li{
+    width: 95%;
+    margin: auto auto 10px auto;
+    border-radius: 10px;
+    box-sizing: border-box;
+    padding: 10px;
+    background-color: @whiteColor;
+  }
+  .list-content{
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 10px;
+    border-bottom: 1px solid @eeColor;
+  }
+  .list-content img{
+    width: 80px;
+    height: 80px;
+    border-radius: 10px;
+  }
+  .list-content .cont{
+    width: 74%;
+  }
+  .list-content .cont p{
+    width: 100%;
+    line-height: 25px;
+    text-align:left;
+    text-align: justify;
+    overflow: hidden;
+    white-space: nowrap;
+  }
+  .list-content .cont .name{
+    text-overflow: ellipsis;
+  }
+  .list-content .cont .price{
+    color: @pinkColor;
+    font-size: 16px;
+    font-weight: 600;
+  }
+  .list-content .cont .kucun-xiaoliang{
+    width: 100%;
+    color: @fontGreyColor;
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    box-sizing: border-box;
+    span{
+      max-width: 48%;
+      white-space: nowrap;
+      overflow: hidden;
+    }
+    .kucun{margin-right: 10px;}
+  }
+  .bottom-con{
+    width: 100%;
+    margin-top: 10px;
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: space-between;
+    span{
+      width: 50%;
+      text-align: center;
+      
+    }
+  }
+  .icon-bianji{
+    color: @blueColor;
+    border-right: 1px solid @eeColor;
+  }
+  .shanchu{
+    color: @fontGreyColor;
+  }
+}
+/* 添加商品 */
+.add-commodity{
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+  .add-content{
+   width: 95%;
+   margin: auto;
+  }
+  .van-cell{
+    padding: 10px 0px;
+    border-bottom: 1px solid @eeColor;
+  }
+   .add-img {
+    width: 95%;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    margin: auto;
+    padding-bottom: 10px;
+    border-bottom: 1px solid @eeColor;
+    span {
+      padding: 10px 0px;
+    }
+    .shangchuan-but {
+      width: 100px;
+      height: 100px;
+      font-size: 35px;
+      color: #dcdee0;
+      line-height:100px;
+      text-align: center;
+      background-color: #f7f8fa;
+    }
+    .img {
+      width: 100px;
+      height: 100px;
+    }
+  }
+  .leibie{
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid @eeColor;
+  }
+  .van-dropdown-menu__bar{
+    // background:rgba(white, white,white, 0)
+    box-shadow: none;
+    margin-right: 10px;
+  }
+  .van-dropdown-item--up .van-cell{
+    padding: 10px;
+  }
+  .shangjia-radio{
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    box-sizing: border-box;
+    padding: 15px 0px;
+  }
+  .van-radio-group--horizontal{
+    margin-left: 30px;
+  }
+  .van-radio--horizontal{
+    margin-right:35px;
+  }
+}
+/* 营销推广 */
+.marketexten{
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+  background-color: @eeColor;
+  .van-tabs{
+    height: 100%;
+    overflow: hidden;
+  }
+  .van-tabs__content{
+    height: 100%;
+    margin-top: 10px;
+    overflow: auto;
+  }
+  ul{
+    margin-bottom: 165px;
+  }
+  ul li{
+   width: 95%;
+   height: 110px;
+   position: relative;
+   box-sizing: border-box;
+   margin:auto auto 10px auto;
+   padding: 10px;
+  }
+  .couponBgk{
+    position:absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -999;
+  }
+  .yinzhang{
+    width: 60px;
+    height: 50px;
+    position: absolute;
+    top: 0px;
+    right: 10px;
+  }
+  .coupon{
+   display: flex;
+   flex-wrap: nowrap;
+   align-items: center;
+  }
+  .coupon-l{
+    max-width: 33%;
+    margin-right: 20px;
+    color: @redColor;
+    white-space: nowrap;
+    overflow: hidden;
+  }
+  .with{
+    font-size: 20px;
+  }
+  .money{
+    font-size: 45px;
+    margin-left: -15px;
+    letter-spacing:-2px
+  }
+  .coupon-r{
+    width: 40%;
+    line-height: 22px;
+    p{
+      width: 100%;
+      white-space: nowrap;
+      overflow: hidden;
+    }
+  }
+  .coupon-text{
+    color: @redColor;
+  }
+  .manjian{
+    color: @fontGreyColor;
+  }
+  .hengxian{
+    width: 100%;
+    height: 1px;
+    background: repeating-linear-gradient(-45deg,#ff6c6c 0,#ff6c6c 20%,transparent 0,transparent 25%,#1989fa 0,#1989fa 45%,transparent 0,transparent 50%);
+    background-size: 100px;
+    content: '';
+    margin: 10px auto 10px auto;
+  }
+  .number-youxiaoqi{
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: space-between;
+    color: @fontGreyColor;
+  }
+}
+/* 优惠券设置 */
+.coupon-settings{
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+  .settings-content{
+    width: 95%;
+    margin: auto;
+  }
+  .van-cell{
+    padding: 15px 0px;
+    border-bottom: 1px solid @eeColor;
+    align-items: center;
+  }
+  .date-cale .van-cell__value{
+   font-size: 16px;
+  }
+}
