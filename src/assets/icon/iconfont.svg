@@ -1,0 +1,32 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd" >
+<!--
+2013-9-30: Created.
+-->
+<svg>
+<metadata>
+Created by iconfont
+</metadata>
+<defs>
+
+<font id="iconfont" horiz-adv-x="1024" >
+  <font-face
+    font-family="iconfont"
+    font-weight="500"
+    font-stretch="normal"
+    units-per-em="1024"
+    ascent="896"
+    descent="-128"
+  />
+    <missing-glyph />
+    
+    <glyph glyph-name="lianxiren1" unicode="&#59071;" d="M512 819.506c125.754 0 228.326-102.583 228.326-228.338 0-125.766-102.572-228.338-228.326-228.338-125.742 0-228.338 102.572-228.338 228.338 0 125.755 102.596 228.338 228.338 228.338zM906.291-52.224H117.708C124.958 134.31 298.696 283.6 512 283.6s387.054-149.29 394.291-335.824z"  horiz-adv-x="1024" />
+
+    
+    <glyph glyph-name="shouji" unicode="&#59225;" d="M694.34 818.34H358.82c-60.84 0-111.24-49.68-111.24-111.42v-638.28c0-60.84 49.68-111.24 111.24-111.24h335.52c60.84 0 111.24 49.68 111.24 111.24V707.8199999999999c0.18 60.84-49.5 110.52-111.24 110.52z m-166.5-795.24c-19.98 0-36 16.02-36 36s16.02 36 36 36 36-16.02 36-36c0-19.26-16.02-36-36-36z m193.86 132.12H331.64V641.4h390.06v-486.18z m0 0"  horiz-adv-x="1024" />
+
+    
+
+
+  </font>
+</defs></svg>
