@@ -1,0 +1,58 @@
+{
+  "id": "2520608",
+  "name": "零售户",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "16265824",
+      "name": "上传图片",
+      "font_class": "shiliangzhinengduixiang58",
+      "unicode": "e802",
+      "unicode_decimal": 59394
+    },
+    {
+      "icon_id": "21066704",
+      "name": "关 闭",
+      "font_class": "guanbi1",
+      "unicode": "e638",
+      "unicode_decimal": 58936
+    },
+    {
+      "icon_id": "9151667",
+      "name": "成功",
+      "font_class": "chenggong",
+      "unicode": "e658",
+      "unicode_decimal": 58968
+    },
+    {
+      "icon_id": "20140167",
+      "name": "管理",
+      "font_class": "guanli1",
+      "unicode": "e797",
+      "unicode_decimal": 59287
+    },
+    {
+      "icon_id": "18649976",
+      "name": "日期",
+      "font_class": "riqi",
+      "unicode": "e600",
+      "unicode_decimal": 58880
+    },
+    {
+      "icon_id": "16637783",
+      "name": "返 回",
+      "font_class": "fanhui",
+      "unicode": "e61d",
+      "unicode_decimal": 58909
+    },
+    {
+      "icon_id": "6320648",
+      "name": "规则",
+      "font_class": "guize",
+      "unicode": "e63a",
+      "unicode_decimal": 58938
+    }
+  ]
+}
