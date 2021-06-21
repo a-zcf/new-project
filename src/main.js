@@ -3,6 +3,7 @@ import Vuex from 'vuex'
 import App from './App'
 import router from './router'
 import store from './store/store'
+import qs from 'qs'
 import './assets/icon/iconfont.css'
 import MescrollVue from 'mescroll.js/mescroll'
 import component from './utils/components'
@@ -14,17 +15,30 @@ import {
   NoticeBar,
   Toast,
   Tab, 
-  Tabs
+  Tabs,
+  Swipe, 
+  SwipeItem,
+  Popup,
+  Icon
 } from 'vant';
 Vue.use(NoticeBar);
 Vue.use(Toast);
 Vue.use(Tab);
 Vue.use(Tabs);
+Vue.use(Swipe);
+Vue.use(SwipeItem);
+Vue.use(Popup);
+Vue.use(Icon);
+
 Vue.use(component);
 
+Vue.config.ignoredElements = [
+  'wx-open-launch-weapp'
+]
 Vue.config.productionTip = false
 Vue.prototype.$getRequest = getRequest // get请求
 Vue.prototype.$postRequest = postRequest // post请求
+Vue.prototype.$qs = qs
 
 router.beforeEach((to, from, next) => {
   // 路由发生改变修改页面的title

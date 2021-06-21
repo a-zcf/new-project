@@ -3,42 +3,68 @@
     <span class="iconfont icon-chenggong msgIcon"></span>
     <span class="msg_text1">支付成功！</span>
     <span class="msg_text2">感谢您使用真龙烟包支付！</span>
-    <!-- <div class="activity">
-      <h3>{{ title }}</h3>
-      <img :src="img" @click="onImg" />
-    </div> -->
+    <wx-open-launch-weapp
+      id="launch-btn"
+      username="gh_77d0b13f46ae"
+      path="pages/home/home?hide=1"
+    >
+      <script type="text/wxtag-template">
+        <div>
+          <style>
+            .btn{
+              outline: none;
+              display: block;
+              background-color:#fff;
+              border: 1px solid #4486ff;
+              width: 200px;
+              height: 50px;
+              margin:160px auto auto auto;
+              color: #4486ff;
+              border-radius: 50px;
+              font-size:16px;
+            }
+          </style>
+          <button class="btn">领取会员权益</button>
+        </div>
+      </script>
+    </wx-open-launch-weapp>
   </div>
 </template>
 
 <script>
-// import { PaySuccess } from "../../api/api";
+import { getJssdkConfig } from "../../api/api";
+import wx from "weixin-js-sdk";
 export default {
   name: "paymentsuccess",
   data() {
-    return {
-      // orderId: "",
-      // url: "", // 点击跳转的链接
-      // title: "", // 活动名称
-      // img: "", // 活动配图
-    };
+    return {};
   },
-  created() {},
   mounted() {
-    // this.orderId = this.$route.query.orderId;
-    // this.$postRequest(PaySuccess, { orderId: this.orderId }).then((res) => {
-    //   if (res.data.code == 0) {
-    //     let { url, title, img } = res.data.data.activity;
-    //     this.url = url;
-    //     this.title = title;
-    //     this.img = img;
-    //   }
-    // });
+    let url = location.href.split("#")[0];
+    this.$postRequest(getJssdkConfig, { url: url }).then((res) => {
+      if (res.data.code === 0) {
+        let { appId, timestamp, nonceStr, signature } = res.data.data.config;
+        wx.config({
+          debug: false,
+          appId: appId,
+          timestamp: timestamp,
+          nonceStr: nonceStr,
+          signature: signature,
+          jsApiList: ["openProductSpecificView"],
+          openTagList: ["wx-open-launch-weapp"],
+        });
+        wx.ready(function () {
+          var btn = document.getElementById("launch-btn");
+          btn.addEventListener("launch", function (e) {});
+          btn.addEventListener("error", function (e) {
+            console.log("fail", e.detail);
+          });
+        });
+        wx.error(function (res) {});
+      }
+    });
   },
-  methods: {
-    // onImg() {
-    //   window.location.href = this.url;
-    // },
-  },
+  methods: {},
 };
 </script>
 

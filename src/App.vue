@@ -1,10 +1,10 @@
 <template>
   <div id="app">
-    <div id="iphonex-helper-body">
-      <transition :name="transitionName">
-        <router-view class="child-view"></router-view>
-      </transition>
-    </div>
+    <!-- <div id="iphonex-helper-body"> -->
+    <transition :name="transitionName">
+      <router-view class="child-view"></router-view>
+    </transition>
+    <!-- </div> -->
   </div>
 </template>
 
@@ -84,58 +84,35 @@ body {
     -moz-osx-font-smoothing: grayscale;
     height: 100%;
     position: relative;
-    #iphonex-helper-body {
-      height: 100%;
-      box-sizing: border-box !important;
-    }
   }
   //异型屏要再多加一点头部
   @media screen and (max-aspect-ratio: 18/9) {
     #app {
-      #iphonex-helper-body {
-        height: 100%;
-        box-sizing: border-box !important;
-      }
     }
   }
   //iphone 6/6S/7/8 4.7英寸
   @media only screen and (device-width: 375px) and (device-height: 667px) and (-webkit-device-pixel-ratio: 2) {
     #app {
-      #iphonex-helper-body {
-        box-sizing: border-box !important;
-      }
     }
   }
   //iphone 6+/6S+/7+/8+ 5.5英寸
   @media only screen and (device-width: 414px) and (device-height: 736px) and (-webkit-device-pixel-ratio: 3) {
     #app {
-      #iphonex-helper-body {
-        box-sizing: border-box !important;
-      }
     }
   }
   //iphone X
   @media only screen and (device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3) {
     #app {
-      #iphonex-helper-body {
-        box-sizing: border-box !important;
-      }
     }
   }
   //iphone XS MAX
   @media only screen and (device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 3) {
     #app {
-      #iphonex-helper-body {
-        box-sizing: border-box !important;
-      }
     }
   }
   //iphone XR
   @media only screen and (device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 2) {
     #app {
-      #iphonex-helper-body {
-        box-sizing: border-box !important;
-      }
     }
   }
 }

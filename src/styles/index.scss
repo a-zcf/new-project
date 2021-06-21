@@ -9,29 +9,31 @@
 .van-tabs__line{
   width: 90px;
 }
-.mescroll-upwarp{
-  padding: 25px 0px !important;
-}
+// .mescroll-upwarp{
+//   padding: 25px 0px !important;
+// }
 .upwarp-nodata,.empty-tip{
   font-size: 27px !important;
   margin-bottom: 150px;
 }
-.mescroll-empty{
-  padding: 30px 0px !important;
-}
+// .mescroll-empty{
+//   padding: 30px 0px !important;
+// }
 .upwarp-tip{
-  font-size: 28px !important;
+  font-size: 27px !important;
 }
 .mescroll-bottom{
   margin-bottom: 150px;
+  font-size: 27px !important;
 }
 .mescroll{
-  height:100% !important;
-  overflow: hidden;
-  overflow: auto;
+  // height:100% !important;
+  // overflow: hidden;
+  // overflow: auto;
 }
 .upwarp-nodata{
  margin-bottom: 150px;
+ font-size: 27px !important;
 }
 /*vant轻提示全局样式 */
 .van-toast {
@@ -43,7 +45,7 @@
   }
 }
 /* 全局隐藏滚动条 */
-ul::-webkit-scrollbar,.slide::-webkit-scrollbar{
+::-webkit-scrollbar{
   display: none;
 }
 /* 烟包支付 */
@@ -52,9 +54,6 @@ ul::-webkit-scrollbar,.slide::-webkit-scrollbar{
   height: 100%;
   overflow: hidden;
   position: relative;
-  .van-tabs__content{
-    // min-height: 500px;
-  }
   .title{
     font-size: 23px;
     color: $greyColor;
@@ -257,12 +256,24 @@ ul::-webkit-scrollbar,.slide::-webkit-scrollbar{
     .text-left{
       text-align: left;
     }
+    .but{
+      height: 38px;
+      line-height: 38px;
+      background-color: $redColor;
+      color: $whiteColor;
+      border-radius: 50px;
+      text-align: center;
+      font-size: 25px;
+      box-sizing: border-box;
+      margin-top: 5px;
+    }
   }
   .weizhifu{
     margin-bottom: 0px !important;
   }
   .tab{
-    margin-bottom: 100px;
+    // margin-bottom: 100px;
+    min-height: 100vw;
     ul{
       margin-top: 35px;
       display: flex;
@@ -326,6 +337,7 @@ ul::-webkit-scrollbar,.slide::-webkit-scrollbar{
     background-color: $blueColor;
     box-sizing: border-box;
     padding: 15px 30px;
+    z-index: 999;
     p{
       line-height: 50px;
     }
@@ -341,17 +353,24 @@ ul::-webkit-scrollbar,.slide::-webkit-scrollbar{
     text-align: center;
     box-shadow: $lightGrayColor 10px 10px 30px 5px ;
     background-color: $whiteColor;
+    z-index: 999;
     span{
       line-height: 100px;
       height: 100%;
     }
     .price{
       width: 60%;
-      font-size: 45px;
-      font-weight: 600;
+      font-size: 40px;
+      box-sizing: border-box;
+      padding: 0px 15px;
+      // font-weight: 600;
       color: $orangeColor;
       white-space: nowrap;
       overflow: hidden;
+      b{
+        font-size: 30px;
+        font-weight: 500;
+      }
     }
     .pay-but{
       width: 40%;
@@ -426,6 +445,64 @@ ul::-webkit-scrollbar,.slide::-webkit-scrollbar{
       text-overflow: ellipsis;
     }
   }
+  .my-swipe{
+    height: 320px;
+    margin: 30px 0px;
+  }
+  .guangao-img{
+    width: 100%;
+    height: 100%;
+  }
+  .my-swipe .van-swipe__indicators{
+    bottom:30px
+  }
+  .my-swipe .van-swipe__indicator{
+     width: 30px;
+     height: 30px;
+  }
+  .swipe-title{
+    width: 100%;
+    height: 60px;
+    position: absolute;
+    bottom: 0;
+    background-color: rgba($color: #000000, $alpha: 0.5);
+    color: $whiteColor;
+    box-sizing: border-box;
+    white-space: nowrap;
+    overflow: hidden;
+    padding: 0px 15px;
+    display: flex;
+    align-items: center;
+  }
+  .huodong-list{
+    width: 90%;
+    margin: 30px auto;
+    display: flex;
+    align-items: center;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    background-color: $eeColor;
+    border-radius: 10px;
+    box-sizing: border-box;
+    padding: 20px;
+  }
+  .huodong-list .huodongImg{
+    width: 150px;
+    height: 150px;
+  }
+  .left-huodong{
+    width: 60%;
+  }
+  .left-huodong p{
+    line-height: 50px;
+  }
+  .bot-text{
+    color: $greyColor;
+    font-size: 25px;
+  }
+  .tit{
+    font-size: 35px;
+  }
 }
 
 /* 未绑定零售户详情图 */
@@ -467,42 +544,6 @@ ul::-webkit-scrollbar,.slide::-webkit-scrollbar{
     font-size: 30px;
     color: #999;
   }
-  // .prompt_text {
-  //   width: 95%;
-  //   margin: 10px auto auto auto;
-  //   font-size: 15px;
-  //   .num {
-  //     margin-right: 5px;
-  //     color: red;
-  //   }
-  // }
-  // .preservation {
-  //   width: 90%;
-  //   position: fixed;
-  //   bottom: 20px;
-  //   left: 5%;
-  //   border-radius: 50px !important;
-  // }
-  // .activity {
-  //   width: 100%;
-  //   box-sizing: border-box;
-  //   h3 {
-  //     width: 95%;
-  //     text-align: center;
-  //     padding: 0;
-  //     margin: 100px auto 30px auto;
-  //     color: $blueColor;
-  //     white-space: nowrap;
-  //     overflow: hidden;
-  //   }
-  //   img {
-  //     width: 95%;
-  //     display: block;
-  //     height: 280px;
-  //     margin: auto;
-  //     border-radius: 10px;
-  //   }
-  // }
 }
 /* 支付错误 */
 .err {

@@ -43,29 +43,50 @@
         </div>
       </strip>
       <boss-infor :supplierData="supplierData"></boss-infor>
-      <img
-        :src="img == '' || img == null ? kongimg : img"
-        class="guanggao-img"
-        @click="clickDjtz"
-      />
+      <van-swipe
+        class="my-swipe"
+        :autoplay="5000"
+        indicator-color="#4486ff"
+        v-if="activityList.length !== 0"
+      >
+        <van-swipe-item v-for="(item, index) in activityList" :key="index">
+          <p class="swipe-title">{{ item.title }}</p>
+          <!-- <img
+            :src="item.img"
+            class="guangao-img"
+            @click="activityUrl(item.url)"
+          /> -->
+          <img :src="item.img" class="guangao-img" @click="showPopup()" />
+        </van-swipe-item>
+      </van-swipe>
       <!-- <img src="../../assets/img/head-1.png" class="guanggao-img" /> -->
 
       <tab-list
-        @onClick="onClick"
+        @changeList="changeList"
         :list="list"
         :goodLists="goodLists"
       ></tab-list>
     </mescroll-vue>
+    <activity-list
+      :activityList="activityList"
+      :show="show"
+      @clickShowPopup="clickShowPopup($event)"
+    ></activity-list>
     <!-- </div> -->
     <div class="footer01">
       <p>温馨提示：</p>
-      <p>本二维码是广西中烟终端管理条包管理平台，用于...</p>
+      <p>本二维码是广西中烟工商零共同面向消费者营销平台，用于………</p>
     </div>
   </div>
 </template>
 
 <script>
-import { WxPay, commodityClassList, goodsList } from "../../api/api";
+import {
+  WxPay,
+  commodityClassList,
+  goodsList,
+  getBrandActivityinfo,
+} from "../../api/api";
 export default {
   name: "nonpayment",
   data() {
@@ -104,9 +125,16 @@ export default {
         htmlLoading:
           '<p class="mescroll-bottom"><span class="upwarp-progress mescroll-rotate"></span><span class="upwarp-tip">加载中...</span></p>',
       },
+      area: "",
+      activityList: [],
+      show: false,
     };
   },
   mounted() {
+    const query = this.$qs.parse(location.search.substring(1));
+    if (this.$store.state.token === "") {
+      this.$store.commit(types.LOGIN, query.token);
+    }
     this.codeStr = this.$route.query.codeStr;
     this.strip = this.$route.query.strip;
     this.getWxPay();
@@ -117,7 +145,7 @@ export default {
     });
   },
   methods: {
-    onClick(name) {
+    changeList(name) {
       this.active = name;
       this.mescroll.resetUpScroll();
     },
@@ -140,6 +168,9 @@ export default {
               that.goodLists = that.goodLists.concat(arr);
               that.$nextTick(() => {
                 mescroll.endSuccess(arr.length);
+                if (that.active === "3") {
+                  mescroll.removeEmpty();
+                }
               });
             } else {
               mescroll.endErr();
@@ -165,14 +196,34 @@ export default {
           this.img = img;
 
           this.orderId = res.data.data.payConfig.orderId;
+          this.brandActivityinfo(this.orderId);
         } else {
           this.$toast.fail(res.data.message);
         }
       });
     },
+    brandActivityinfo(orderId) {
+      this.$postRequest(getBrandActivityinfo, {
+        orderId: orderId,
+        area: this.area,
+      }).then((res) => {
+        if (res.data.code === 0) {
+          this.activityList = res.data.data.activityList;
+        }
+      });
+    },
+    // activityUrl(url) {
+    //   window.location.href = url;
+    // },
     clickDjtz() {
       let that = this;
       window.location = that.url;
+    },
+    showPopup() {
+      this.show = true;
+    },
+    clickShowPopup(data) {
+      this.show = data;
     },
   },
 };

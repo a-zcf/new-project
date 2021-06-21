@@ -28,7 +28,6 @@ axios.interceptors.response.use(response => {
     return response
   } else if (response.data.code === 1000) {
     // let url = location.href
-    store.commit(types.LOGOUT)
     // Toast.fail(response.data.msg);
     // window.location.href = red_url + url
   } else {
